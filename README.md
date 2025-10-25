@@ -1,7 +1,9 @@
 PROGRAM:
+
 Write an assembly language program in 8051 to find the factorial of a given  number and store the result in memory.
 
 APPARATUS REQUIRED:
+
 LAPTOP WITH KEIL SOFTWARE
 
 PROGRAM:
