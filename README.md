@@ -24,7 +24,9 @@ MOV 31H, B
 END
 ```
 OUTPUT:
+
 ![WhatsApp Image 2025-10-25 at 08 59 46_a743e8a6](https://github.com/user-attachments/assets/ab69f471-1946-4eb4-9523-2f3cf9ac73f5)
 
 RESULT:
+
 THUS THE PROGRAM TO FIND THE FACTORIAL OF THE GIVEN NUMBER IS EXECUTED.
