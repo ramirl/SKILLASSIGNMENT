@@ -1,7 +1,7 @@
-SKILL ASSIGNMENT-2
+SKILL ASSIGNMENT-1
 
 PROGRAM:
-Write an assembly language program in 8051 to generate a 50 ms delay using Timer 0 in Mode 2 (8-bit auto-reload mode) and blink an LED connected to Port 3.0.
+14.Write an assembly language program in 8051 to reverse the elements of an array and store the reversed array in another memory location.
 
 APPARATUS REQUIRED:
 
@@ -9,35 +9,29 @@ LAPTOP WITH KEIL SOFTWARE
 
 PROGRAM:
 ```
-ORG 0H         
+ORG 0000H
+	
+START:
+    MOV R0, #30H       ; Source array start address
+    MOV R1, #44H       ; Destination array end address
+    MOV R2, #05H       ; Number of elements in array
 
-MOV P3, #00H    
+REVERSE_LOOP:
+    MOV A, @R0          ; Get element from source
+    MOV @R1, A          ; Store element in reversed location
+    INC R0              ; Next source address
+    DEC R1              ; Previous destination address
+    DJNZ R2, REVERSE_LOOP  ; Repeat for all elements
 
-MOV TMOD, #02H  
-MOV TH0, #56H
-MOV TL0, #56H   
-
-SETB TR0        
-
-MAIN:
-    MOV R2, #250   
-
-WAIT_OVERFLOW:
-    JNB TF0, $     
-    CLR TF0        
-    DJNZ R2, WAIT_OVERFLOW 
-
-    CPL P3.0       
-    SJMP MAIN      
+HERE: SJMP HERE          ; Stop program (infinite loop)
 
 END
 ```
 OUTPUT:
 
-![WhatsApp Image 2025-10-25 at 10 15 58_a73af6f9](https://github.com/user-attachments/assets/281aeb78-22ae-4d3f-b080-a2a773245796)
-
-![WhatsApp Image 2025-10-25 at 10 16 06_584e37bc](https://github.com/user-attachments/assets/102cd50a-4273-4a3c-bffc-0017e119e718)
+![WhatsApp Image 2025-10-29 at 19 49 57_304441fc](https://github.com/user-attachments/assets/827bae94-d396-4fa3-a622-bbf18c95b0a6)
+![WhatsApp Image 2025-10-29 at 19 49 41_7dd902a5](https://github.com/user-attachments/assets/5ba8b854-1a95-42c2-956b-df78fec2caa8)
 
 RESULT:
 
-THUS THE PROGRAM TO FIND THE FACTORIAL OF THE GIVEN NUMBER IS EXECUTED.
+THUS  reverse the elements of an array and store the reversed array in another memory location.
